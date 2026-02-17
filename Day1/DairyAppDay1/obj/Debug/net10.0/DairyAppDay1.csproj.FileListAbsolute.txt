@@ -1,0 +1,14 @@
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\bin\Debug\net10.0\DairyAppDay1.exe
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\bin\Debug\net10.0\DairyAppDay1.deps.json
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\bin\Debug\net10.0\DairyAppDay1.runtimeconfig.json
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\bin\Debug\net10.0\DairyAppDay1.dll
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\bin\Debug\net10.0\DairyAppDay1.pdb
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\DairyAppDay1.GeneratedMSBuildEditorConfig.editorconfig
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\DairyAppDay1.AssemblyInfoInputs.cache
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\DairyAppDay1.AssemblyInfo.cs
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\DairyAppDay1.csproj.CoreCompileInputs.cache
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\DairyAppDay1.dll
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\refint\DairyAppDay1.dll
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\DairyAppDay1.pdb
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\DairyAppDay1.genruntimeconfig.cache
+C:\SeniorSoftwareDevloper2026\DairyAppDay1\obj\Debug\net10.0\ref\DairyAppDay1.dll
