@@ -1,19 +1,12 @@
-﻿
-MilkCollection milkCollection = new MilkCollection();
+﻿MilkCollection milk = new MilkCollection();
 
- 
-        Console.WriteLine("Enter Farmer Name:");
-        milkCollection.FarmerName = Console.ReadLine();
+Console.WriteLine("Enter Liters:");
+milk.SetLiters(Convert.ToInt32(Console.ReadLine()));
 
-        Console.WriteLine("Enter Milk in Liters:");
-        milkCollection.Liters = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter Rate:");
+milk.SetRate(Convert.ToInt32(Console.ReadLine()));
 
-        Console.WriteLine("Enter Fat:");
-        milkCollection.Fat = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter Fat:");
+milk.SetFat(Convert.ToInt32(Console.ReadLine()));
 
-        Console.WriteLine("Enter Rate Per Liter:");
-        milkCollection.RatePerLiter = Convert.ToInt32(Console.ReadLine());
-
-        int total = milkCollection.CalculateAmount();
-
-        Console.WriteLine("Total Amount: " + total);
+Console.WriteLine("Total Amount: " + milk.CalculateAmount());
