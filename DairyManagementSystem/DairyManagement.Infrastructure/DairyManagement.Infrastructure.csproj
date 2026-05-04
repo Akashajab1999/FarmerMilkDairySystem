@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DairyManagement.Domain\DairyManagement.Domain.csproj" />
+    <ProjectReference Include="..\DairyManagement.Application\DairyManagement.Application.csproj" />
   </ItemGroup>
 
 </Project>
