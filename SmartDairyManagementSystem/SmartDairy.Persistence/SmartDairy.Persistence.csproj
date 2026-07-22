@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SmartDairy.Application\SmartDairy.Application.csproj" />
     <ProjectReference Include="..\SmartDairy.Domain\SmartDairy.Domain.csproj" />
+    <ProjectReference Include="..\SmartDairy.Shared\SmartDairy.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

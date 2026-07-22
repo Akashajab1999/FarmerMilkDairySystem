@@ -6,7 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 <ItemGroup>	
-    <ProjectReference Include="..\SmartDairy.Domain\SmartDairy.Domain.csproj" />
+    <ProjectReference Include="..\SmartDairy.Domain\SmartDairy.Domain.csproj" />	
+    <ProjectReference Include="..\SmartDairy.Shared\SmartDairy.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
