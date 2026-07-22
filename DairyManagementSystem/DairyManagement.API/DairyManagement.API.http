@@ -1,6 +1,0 @@
-@DairyManagement.API_HostAddress = http://localhost:5197
-
-GET {{DairyManagement.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
