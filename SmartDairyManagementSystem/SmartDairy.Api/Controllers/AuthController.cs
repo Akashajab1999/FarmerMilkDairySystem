@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SmartDairy.Application.Features.Authentication.DTOs;
 using SmartDairy.Application.Features.Authentication.Interfaces;
 
@@ -35,5 +36,17 @@ public class AuthController : ControllerBase
             return Unauthorized(result);
 
         return Ok(result);
+    }
+
+    [Authorize]
+    [HttpGet("profile")]
+    public IActionResult Profile()
+    {
+        return Ok(new
+        {
+            Message = "Welcome to Smart Dairy",
+            Email = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value,
+            Role = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value
+        });
     }
 }
