@@ -1,4 +1,6 @@
-﻿using SmartDairy.Domain.Entities;
+﻿using SmartDairy.Application.Common.Models;
+using SmartDairy.Application.Features.Farmers.DTOs;
+using SmartDairy.Domain.Entities;
 
 namespace SmartDairy.Application.Features.Farmers.Interfaces;
 
@@ -15,4 +17,7 @@ public interface IFarmerRepository
     void Delete(Farmer farmer);
 
     Task SaveChangesAsync();
+
+    
+
 }
