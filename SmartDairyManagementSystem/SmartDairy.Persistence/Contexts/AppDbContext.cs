@@ -18,4 +18,5 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
     public DbSet<User> Users => Set<User>();
+    public DbSet<Farmer> Farmers => Set<Farmer>();
 }
