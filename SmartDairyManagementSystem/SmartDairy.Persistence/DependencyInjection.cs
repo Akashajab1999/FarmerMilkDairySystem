@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SmartDairy.Application.Features.Authentication.Interfaces;
+using SmartDairy.Application.Features.Farmers.Interfaces;
 using SmartDairy.Persistence.Contexts;
 using SmartDairy.Persistence.Repositories;
 
@@ -18,6 +19,7 @@ public static class DependencyInjection
                 configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IFarmerRepository, FarmerRepository>();
 
         return services;
     }
