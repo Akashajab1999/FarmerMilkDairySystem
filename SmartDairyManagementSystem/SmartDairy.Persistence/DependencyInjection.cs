@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SmartDairy.Persistence.Context;
+using SmartDairy.Application.Features.Authentication.Interfaces;
+using SmartDairy.Persistence.Contexts;
+using SmartDairy.Persistence.Repositories;
 
 namespace SmartDairy.Persistence;
 
@@ -15,6 +17,11 @@ public static class DependencyInjection
             options.UseSqlServer(
                 configuration.GetConnectionString("DefaultConnection")));
 
+        services.AddScoped<IUserRepository, UserRepository>();
+
         return services;
     }
+
+
+    
 }

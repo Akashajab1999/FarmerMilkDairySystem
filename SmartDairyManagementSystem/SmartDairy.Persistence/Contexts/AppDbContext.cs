@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SmartDairy.Domain.Entities;
 
-namespace SmartDairy.Persistence.Context;
+namespace SmartDairy.Persistence.Contexts;
 
 public class AppDbContext : DbContext
 {

@@ -1,6 +1,6 @@
-﻿namespace SmartDairy.Domain.Entities;
+﻿namespace SmartDairy.Application.Features.Authentication.DTOs;
 
-public class User : BaseEntity
+public class RegisterRequest
 {
     public string FirstName { get; set; } = string.Empty;
 
@@ -8,11 +8,7 @@ public class User : BaseEntity
 
     public string Email { get; set; } = string.Empty;
 
-    public string PasswordHash { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 
     public string MobileNumber { get; set; } = string.Empty;
-
-    public string Role { get; set; } = "Admin";
-
-    public bool IsActive { get; set; } = true;
 }

@@ -1,7 +1,9 @@
 using SmartDairy.Persistence;
+using SmartDairy.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 
 // Add services to the container.
 
