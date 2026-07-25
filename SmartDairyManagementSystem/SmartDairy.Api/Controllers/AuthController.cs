@@ -20,9 +20,20 @@ public class AuthController : ControllerBase
     {
         var result = await _authService.RegisterAsync(request);
 
-        if (!result)
-            return BadRequest("User already exists.");
+        if (!result.Success)
+            return BadRequest(result);
 
-        return Ok("User registered successfully.");
+        return Ok(result);
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(LoginRequest request)
+    {
+        var result = await _authService.LoginAsync(request);
+
+        if (!result.Success)
+            return Unauthorized(result);
+
+        return Ok(result);
     }
 }

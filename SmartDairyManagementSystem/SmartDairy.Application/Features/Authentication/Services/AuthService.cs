@@ -1,4 +1,5 @@
-﻿using SmartDairy.Application.Features.Authentication.DTOs;
+﻿using SmartDairy.Application.Common.Models;
+using SmartDairy.Application.Features.Authentication.DTOs;
 using SmartDairy.Application.Features.Authentication.Interfaces;
 using SmartDairy.Domain.Entities;
 
@@ -17,12 +18,12 @@ public class AuthService : IAuthService
         _jwtService = jwtService;
     }
 
-    public async Task<bool> RegisterAsync(RegisterRequest request)
+    public async Task<ApiResponse<object>> RegisterAsync(RegisterRequest request)
     {
         var existingUser = await _userRepository.GetByEmailAsync(request.Email);
 
         if (existingUser != null)
-            return false;
+            return ApiResponse<object>.FailureResponse("User already exists.");
 
         var user = new User
         {
@@ -38,11 +39,37 @@ public class AuthService : IAuthService
         await _userRepository.AddAsync(user);
         await _userRepository.SaveChangesAsync();
 
-        return true;
+        return ApiResponse<object>.SuccessResponse(
+            null,
+            "User registered successfully.");
     }
-
-    public Task<string?> LoginAsync(LoginRequest request)
+    public async Task<ApiResponse<LoginResponse>> LoginAsync(LoginRequest request)
     {
-        throw new NotImplementedException();
+        var user = await _userRepository.GetByEmailAsync(request.Email);
+
+        if (user == null)
+        {
+            return ApiResponse<LoginResponse>.FailureResponse("Invalid email or password.");
+        }
+
+        bool isPasswordValid = BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
+
+        if (!isPasswordValid)
+        {
+            return ApiResponse<LoginResponse>.FailureResponse("Invalid email or password.");
+        }
+
+        var token = _jwtService.GenerateToken(user.Email, user.Role);
+
+        var response = new LoginResponse
+        {
+            Token = token,
+            Email = user.Email,
+            Role = user.Role
+        };
+
+        return ApiResponse<LoginResponse>.SuccessResponse(
+            response,
+            "Login successful.");
     }
 }

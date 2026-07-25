@@ -1,10 +1,13 @@
-﻿using SmartDairy.Application.Features.Authentication.DTOs;
-
-namespace SmartDairy.Application.Features.Authentication.Interfaces;
+﻿using SmartDairy.Application.Common.Models;
+using SmartDairy.Application.Features.Authentication.DTOs;
 
 public interface IAuthService
 {
-    Task<bool> RegisterAsync(RegisterRequest request);
+    Task<ApiResponse<object>> RegisterAsync(RegisterRequest request);
 
-    Task<string?> LoginAsync(LoginRequest request);
+    public Task<ApiResponse<LoginResponse>> LoginAsync(LoginRequest request)
+    {
+        throw new NotImplementedException();
+    }
+
 }
