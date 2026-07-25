@@ -15,7 +15,15 @@ namespace SmartDairy.Api.Middleware
             }
 
             httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await httpContext.Response.WriteAsJsonAsync(new { error = "An unexpected error occurred." }, cancellationToken: cancellationToken);
+
+            await httpContext.Response.WriteAsJsonAsync(
+    new
+    {
+        error = exception.Message,
+        type = exception.GetType().Name,
+        stackTrace = exception.StackTrace
+    },
+    cancellationToken: cancellationToken);
             return true;
         }
     }
